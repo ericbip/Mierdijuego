@@ -1,0 +1,79 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #111;
+  color: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --accent: #c6f36a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #292929 0%, #111 58%);
+}
+
+button { font: inherit; }
+
+.app {
+  width: min(100% - 28px, 620px);
+  margin: 0 auto;
+  padding: 34px 0 24px;
+}
+
+.heading { text-align: center; margin-bottom: 24px; }
+.eyebrow { color: var(--accent); font-size: .72rem; letter-spacing: .2em; font-weight: 800; }
+h1 { font-size: clamp(2.6rem, 9vw, 4.6rem); line-height: 1; letter-spacing: -.07em; margin: 12px 0; }
+.subtitle { color: #b5b5b5; margin: 0; }
+
+.game-panel {
+  padding: 14px;
+  background: #1d1d1d;
+  border: 1px solid #373737;
+  border-radius: 18px;
+  box-shadow: 0 24px 80px #0008;
+}
+
+.hud { display: flex; justify-content: space-between; gap: 12px; padding: 4px 4px 12px; }
+.hud p { margin: 0; color: #a7a7a7; font-size: .7rem; letter-spacing: .1em; }
+.hud strong { display: block; margin-top: 4px; color: var(--accent); font-size: 1.4rem; letter-spacing: 0; }
+
+.canvas-wrap { position: relative; overflow: hidden; border-radius: 10px; background: #151a15; }
+canvas { display: block; width: 100%; height: auto; touch-action: pan-y; }
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #090c09b8;
+}
+.overlay.hidden { display: none; }
+.overlay-card { max-width: 300px; text-align: center; }
+.overlay-card h2 { margin: 0 0 10px; font-size: clamp(1.4rem, 5vw, 2rem); }
+.overlay-card p { color: #c5c5c5; line-height: 1.5; }
+button {
+  margin-top: 10px;
+  padding: 12px 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #151515;
+  background: var(--accent);
+  font-weight: 800;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+.instructions { color: #aaa; font-size: .82rem; line-height: 1.8; text-align: center; }
+kbd { display: inline-block; padding: 1px 6px; border: 1px solid #555; border-radius: 5px; color: #eee; background: #292929; }
+footer { margin-top: 22px; text-align: center; color: #777; font-size: .75rem; }
+
+@media (max-width: 420px) {
+  .app { width: min(100% - 16px, 620px); padding-top: 24px; }
+  .game-panel { padding: 8px; }
+  .instructions { font-size: .72rem; }
+}
