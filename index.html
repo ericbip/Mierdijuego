@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Mierdijuego: un pequeño arcade para poner a prueba tus reflejos.">
+  <title>Mierdijuego</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./src/main.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="heading">
+      <p class="eyebrow">ARCADE · VERSIÓN 0.1</p>
+      <h1>Mierdijuego</h1>
+      <p class="subtitle">Muévete. Esquiva. No la líes.</p>
+    </header>
+
+    <section class="game-panel" aria-label="Juego">
+      <div class="hud">
+        <p>PUNTUACIÓN <strong id="score">0</strong></p>
+        <p>RÉCORD <strong id="best">0</strong></p>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="480" height="640" aria-label="Esquiva los obstáculos que caen" role="img"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <h2 id="overlay-title">¿Listo para la mierda?</h2>
+            <p id="overlay-copy">Esquiva los mojones el máximo tiempo posible.</p>
+            <button id="start-button" type="button">Empezar</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="instructions">Moverse: <kbd>←</kbd> <kbd>→</kbd> o <kbd>A</kbd> <kbd>D</kbd> · En móvil, toca los lados del juego.</p>
+    </section>
+
+    <footer>Hecho para divertirse. Sin frameworks, sin dependencias, sin excusas.</footer>
+  </main>
+</body>
+</html>
